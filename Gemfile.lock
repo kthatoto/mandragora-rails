@@ -135,6 +135,7 @@ GEM
     selenium-webdriver (3.4.4)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
+    slack-incoming-webhooks (0.2.0)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -179,6 +180,7 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 5.0)
   selenium-webdriver
+  slack-incoming-webhooks
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
