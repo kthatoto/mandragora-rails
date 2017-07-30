@@ -25,8 +25,10 @@ https://mandragora-rails.herokuapp.com
   "humidity": 94
 }   
 ```
-<br>
+<br />
+
 ----
+
 #### **`GET`** `/api/slack`
 * #### 概要<br />
   Slackへのテスト通知。
