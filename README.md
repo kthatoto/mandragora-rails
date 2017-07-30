@@ -1,24 +1,42 @@
-# README
+**Mandragora-Rails API Document**
+----
+### **Root URL**
+https://mandragora-rails.herokuapp.com
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+----
+#### **`GET`** `/api/weather`
+* #### 概要<br />
+  現在時間の東京の気象情報を取得する。
+* #### Parameters<br />
+  なし
+* #### Response
+  - weather
+    - Sunny
+    - Clouds
+    - Rainy
+  - temp
+    - 気温を華氏(°Ｆ)で表示。(そのうち摂氏(℃)に直します)
+  - humidity
+    - 湿度を(%)で表示。
+```ruby
+{
+  "weather": "Clouds",
+  "temp": 297.44,
+  "humidity": 94
+}   
+```
+<br>
+----
+#### **`GET`** `/api/slack`
+* #### 概要<br />
+  Slackへのテスト通知。
+* #### Parameters<br />
+  なし
+* #### Response
+  - status
+    - 固定。
+```ruby
+{
+  "status": "alerted!"
+}   
+```
