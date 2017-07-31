@@ -11,9 +11,9 @@ https://mandragora-rails.herokuapp.com
   なし
 * #### Response
   - weather
-    - Sunny
+    - Clear
     - Clouds
-    - Rainy
+    - Rain
   - temp
     - 気温を華氏(°Ｆ)で表示。(そのうち摂氏(℃)に直します)
   - humidity

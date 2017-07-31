@@ -30,4 +30,28 @@ class ApiController < ApplicationController
     }
     render json: log
   end
+
+  def announce
+    weathers_jp = ["晴れ", "曇り", "雨"]
+    weathers_en = ["Clear", "Clouds", "Rain"]
+
+    uri  = URI.parse('http://api.openweathermap.org/data/2.5/weather?q=Tokyo,jp&appid=84b7ad6bb8746ca5e0ac13a4181d6261')
+    json = Net::HTTP.get(uri)
+    result = JSON.parse(json)
+
+    weather  = result["weather"].first["main"]
+    temp     = result["main"]["temp"]
+    humidity = result["main"]["humidity"]
+
+    result=`say 東京の天気。#{weathers_jp[weathers_en.index(weather)]}`
+    result=`say 気温は。#{(5*(temp-32)/9).to_i}度`
+    result=`say 湿度は。#{humidity}%。です。`
+    render json: []
+  end
 end
+
+
+
+
+
+
