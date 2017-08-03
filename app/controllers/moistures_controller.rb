@@ -13,6 +13,7 @@ class MoisturesController < ApplicationController
       return
     end
     save_weather
+    moisture.time_label = current_time
     if moisture.save
       render json: {status: true,  msg: "success!"}
     else
