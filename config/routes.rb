@@ -5,4 +5,9 @@ Rails.application.routes.draw do
     get "log"      => "api#log"
     get "announce" => "api#announce"
   end
+
+  scope :moistures do
+    get "index"  => "moistures#index"
+    get "create" => "moistures#create"
+  end
 end
