@@ -7,9 +7,9 @@ class MoisturesController < ApplicationController
   def create
     moisture = Moisture.new(value: params[:value])
     if moisture.save
-      render json: {status: "success!"}
+      render json: {status: true,  msg: "success!"}
     else
-      render json: {status: "failed..."}
+      render json: {status: false, msg: "failed..."}
     end
   end
 

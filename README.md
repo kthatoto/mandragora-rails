@@ -57,12 +57,14 @@ https://mandragora-rails.herokuapp.com
 ```ruby
 成功時
 {
-  "status": "success!"
+  "status": true,
+  "msg":    "success!"
 }
 ```
 ```ruby
 失敗時
 {
-  "status": "failed..."
+  "status": false,
+  "msg":    "failed..."
 }
 ```
