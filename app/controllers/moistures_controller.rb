@@ -2,7 +2,6 @@ class MoisturesController < ApplicationController
 
   def index
     moistures = Moisture.all
-    debugger
   end
 
   def create
@@ -25,6 +24,7 @@ class MoisturesController < ApplicationController
     def save_weather
       t = Time.zone.now
       current_time = Time.zone.local(t.year, t.month, t.day, t.hour, 30 * (t.min/30).to_i, 0)
+
       if Weather.find_by(time_label: current_time)
       else
         uri  = URI.parse('http://api.openweathermap.org/data/2.5/weather?q=Tokyo,jp&appid=84b7ad6bb8746ca5e0ac13a4181d6261')

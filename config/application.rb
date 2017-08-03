@@ -28,7 +28,9 @@ module MandragoraRails
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
-    config.time_zone = 'Asia/Tokyo'
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
+
     config.api_only = true
     config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
       allow do
