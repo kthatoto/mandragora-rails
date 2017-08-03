@@ -23,7 +23,7 @@ https://mandragora-rails.herokuapp.com
   "weather": "Clouds",
   "temp": 297.44,
   "humidity": 94
-}   
+}
 ```
 <br />
 
@@ -40,5 +40,29 @@ https://mandragora-rails.herokuapp.com
 ```ruby
 {
   "status": "alerted!"
-}   
+}
+```
+<br />
+
+---
+
+#### **`GET`** `/moistures/create?value=***`
+* #### 概要<br />
+  湿り気データを作成
+* #### Parameters<br />
+  value [integer]
+* #### Response
+  - status
+    - 固定。
+```ruby
+成功時
+{
+  "status": "success!"
+}
+```
+```ruby
+失敗時
+{
+  "status": "failed..."
+}
 ```
