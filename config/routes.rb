@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     get "slack"    => "api#slack"
     get "log"      => "api#log"
     get "announce" => "api#announce"
+    get "scream"   => "api#scream"
+    get "solar"    => "api#solar"
   end
 
   scope :moistures do

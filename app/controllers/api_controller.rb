@@ -48,6 +48,18 @@ class ApiController < ApplicationController
     result=`say 湿度は。#{humidity}%。です。`
     render json: []
   end
+
+  def scream
+    app = "/Users/conol/Desktop/mandragora-rails/app"
+    exec=`afplay #{app}/voices/scream.wav`
+    render json: {status: true}
+  end
+
+  def solar
+    app = "/Users/conol/Desktop/mandragora-rails/app"
+    exec=`afplay #{app}/voices/go_out.wav`
+    render json: {status: true}
+  end
 end
 
 
