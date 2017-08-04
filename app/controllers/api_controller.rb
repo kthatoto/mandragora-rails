@@ -44,7 +44,7 @@ class ApiController < ApplicationController
     humidity = result["main"]["humidity"]
 
     result=`say 東京の天気。#{weathers_jp[weathers_en.index(weather)]}`
-    result=`say 気温は。#{(5*(temp-32)/9).to_i}度`
+    result=`say 気温は。#{(temp - 273).to_i}度`
     result=`say 湿度は。#{humidity}%。です。`
     render json: []
   end

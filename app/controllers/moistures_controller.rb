@@ -14,6 +14,7 @@ class MoisturesController < ApplicationController
     end
     save_weather
     moisture.time_label = current_time
+    result=`afplay ../voices/dry.wav`
     if moisture.save
       render json: {status: true,  msg: "success!"}
     else
