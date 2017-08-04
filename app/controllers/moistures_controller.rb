@@ -5,6 +5,23 @@ class MoisturesController < ApplicationController
   end
 
   def create
+    value = params[:value].to_i
+
+    app = "/Users/conol/Desktop/mandragora-rails/app"
+    result=`cat #{app}/controllers/status.txt`
+    result.chomp!
+    if 512 <= value && result == "thirsty"
+      exec=`afplay #{app}/voices/not_dry.wav`
+      exec=`rm #{app}/controllers/status.txt`
+      exec=`touch #{app}/controllers/status.txt`
+      exec=`echo moist > #{app}/controllers/status.txt`
+    elsif value < 512 && result == "moist"
+      exec=`afplay #{app}/voices/dry.wav`
+      exec=`rm #{app}/controllers/status.txt`
+      exec=`touch #{app}/controllers/status.txt`
+      exec=`echo thirsty > #{app}/controllers/status.txt`
+    end
+
     moisture = Moisture.new(value: params[:value])
     t = Time.zone.now
     current_time = Time.zone.local(t.year, t.month, t.day, t.hour, 30 * (t.min/30).to_i, 0)
@@ -14,7 +31,6 @@ class MoisturesController < ApplicationController
     end
     save_weather
     moisture.time_label = current_time
-    result=`afplay ../voices/dry.wav`
     if moisture.save
       render json: {status: true,  msg: "success!"}
     else
